@@ -1,4 +1,4 @@
-package com.example.sdr;
+package com.example.sdr.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

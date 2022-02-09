@@ -1,4 +1,4 @@
-package com.example.sdr;
+package com.example.sdr.config;
 
 import com.zaxxer.hikari.*;
 import org.springframework.beans.factory.annotation.Value;
