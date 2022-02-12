@@ -1,5 +1,7 @@
 package com.example.sdr.models;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -9,7 +11,8 @@ public class WebUser {
     private Long id;
     private String email;
     private String userPassword;
-    private UserRole role;
+//    @Ignore
+//    private UserRole role;
 
     public WebUser() {
     }
@@ -48,25 +51,26 @@ public class WebUser {
         this.userPassword = userPassword;
     }
 
-    public UserRole getRole() {
-        return role;
-    }
+//    public UserRole getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(UserRole role) {
+//        this.role = role;
+//    }
 
-    public void setRole(UserRole role) {
-        this.role = role;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof WebUser)) return false;
         WebUser webUser = (WebUser) o;
-        return Objects.equals(id, webUser.id) && Objects.equals(email, webUser.email) && Objects.equals(userPassword, webUser.userPassword) && role == webUser.role;
+        return Objects.equals(id, webUser.id) && Objects.equals(email, webUser.email) && Objects.equals(userPassword, webUser.userPassword);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, userPassword, role);
+        return Objects.hash(id, email, userPassword);
     }
 
     @Override
@@ -75,7 +79,6 @@ public class WebUser {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", userPassword='" + userPassword + '\'' +
-                ", role=" + role +
                 '}';
     }
 }
