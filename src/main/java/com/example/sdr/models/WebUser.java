@@ -1,7 +1,5 @@
 package com.example.sdr.models;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
-
 import javax.persistence.*;
 import java.util.Objects;
 
