@@ -31,6 +31,23 @@ public class SdrController {
         return "sdr";
     }
 
+    /**
+     * Общее описание
+     *
+     * @param dateShipDailyReport значение параметра
+     * @param positionGps
+     * @param presentSpeed
+     * @param averageSpeed
+     * @param course
+     * @param vesselOperationMode
+     * @param engineOperationMode
+     * @param gasOilConsumptionPerDay
+     * @param lubricantOilConsumptionPerDay
+     * @param gasOilRemainOnBoard
+     * @param lubricantOilRemainOnBoard
+     * @param remarks
+     * @return что возвращает?
+     */
 
     @PostMapping("/sdr")
     public String save(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateShipDailyReport,
