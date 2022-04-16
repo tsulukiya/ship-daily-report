@@ -26,6 +26,6 @@ public class WebUserController {
     public String save(@RequestParam String webUserName, @RequestParam String userPassword) {
         WebUser webUser = new WebUser(webUserName, userPassword);
         webUserRepository.save(webUser);
-        return "registration";
+        return "registration_user_status";
     }
 }
