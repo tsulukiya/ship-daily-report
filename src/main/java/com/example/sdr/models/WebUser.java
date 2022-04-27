@@ -2,6 +2,7 @@ package com.example.sdr.models;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "web_user")
@@ -9,16 +10,12 @@ public class WebUser {
     private Long id;
     private String email;
     private String userPassword;
-//    @Ignore
-//    private UserRole role;
+    private boolean isActive;
+    private UserRole role;
 
     public WebUser() {
     }
 
-    public WebUser(String email, String userPassword) {
-        this.email = email;
-        this.userPassword = userPassword;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,26 +46,39 @@ public class WebUser {
         this.userPassword = userPassword;
     }
 
-//    public UserRole getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(UserRole role) {
-//        this.role = role;
-//    }
+    @Column(name = "active")
+    public boolean isActive() {
+        return isActive;
+    }
 
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    @Column(name = "usr_role")
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof WebUser)) return false;
         WebUser webUser = (WebUser) o;
-        return Objects.equals(id, webUser.id) && Objects.equals(email, webUser.email) && Objects.equals(userPassword, webUser.userPassword);
+        return isActive == webUser.isActive &&
+                Objects.equals(id, webUser.id) &&
+                Objects.equals(email, webUser.email) &&
+                Objects.equals(userPassword, webUser.userPassword) &&
+                role == webUser.role;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, userPassword);
+        return Objects.hash(id, email, userPassword, isActive, role);
     }
 
     @Override
@@ -77,6 +87,8 @@ public class WebUser {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", userPassword='" + userPassword + '\'' +
+                ", isActive=" + isActive +
+                ", role=" + role +
                 '}';
     }
 }

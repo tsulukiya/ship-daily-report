@@ -20,10 +20,10 @@ public class SdrController {
         this.sdrRepository = sdrRepository;
     }
 
-    @GetMapping("/main")
-    public String registration(){
-        return "main";
-    }
+//    @GetMapping("/main")
+//    public String registration(){
+//        return "main";
+//    }
 
 
     @GetMapping("/sdr")
@@ -49,35 +49,35 @@ public class SdrController {
      * @return что возвращает?
      */
 
-    @PostMapping("/sdr")
-    public String save(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateShipDailyReport,
-                       @RequestParam String positionGps,
-                       @RequestParam Double presentSpeed,
-                       @RequestParam Double averageSpeed,
-                       @RequestParam Integer course,
-                       @RequestParam String vesselOperationMode,
-                       @RequestParam String engineOperationMode,
-                       @RequestParam Double gasOilConsumptionPerDay,
-                       @RequestParam Double lubricantOilConsumptionPerDay,
-                       @RequestParam Double gasOilRemainOnBoard,
-                       @RequestParam Double lubricantOilRemainOnBoard,
-                       @RequestParam String remarks) {
-        ShipDailyReport shipDailyReport = new ShipDailyReport();
-        shipDailyReport.setDateShipDailyReport(dateShipDailyReport);
-        shipDailyReport.setPositionGps(positionGps);
-        shipDailyReport.setPresentSpeed(presentSpeed);
-        shipDailyReport.setAverageSpeed(averageSpeed);
-        shipDailyReport.setCourse(course);
-        shipDailyReport.setVesselOperationMode(vesselOperationMode);
-        shipDailyReport.setEngineOperationMode(engineOperationMode);
-        shipDailyReport.setGasOilConsumptionPerDay(gasOilConsumptionPerDay);
-        shipDailyReport.setLubricantOilConsumptionPerDay(lubricantOilConsumptionPerDay);
-        shipDailyReport.setGasOilRemainOnBoard(gasOilRemainOnBoard);
-        shipDailyReport.setLubricantOilRemainOnBoard(lubricantOilRemainOnBoard);
-        shipDailyReport.setRemarks(remarks);
-        sdrRepository.save(shipDailyReport);
-        return "sdr";
-    }
+//    @PostMapping("/sdr")
+//    public String save(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateShipDailyReport,
+//                       @RequestParam String positionGps,
+//                       @RequestParam Double presentSpeed,
+//                       @RequestParam Double averageSpeed,
+//                       @RequestParam Integer course,
+//                       @RequestParam String vesselOperationMode,
+//                       @RequestParam String engineOperationMode,
+//                       @RequestParam Double gasOilConsumptionPerDay,
+//                       @RequestParam Double lubricantOilConsumptionPerDay,
+//                       @RequestParam Double gasOilRemainOnBoard,
+//                       @RequestParam Double lubricantOilRemainOnBoard,
+//                       @RequestParam String remarks) {
+//        ShipDailyReport shipDailyReport = new ShipDailyReport();
+//        shipDailyReport.setDateShipDailyReport(dateShipDailyReport);
+//        shipDailyReport.setPositionGps(positionGps);
+//        shipDailyReport.setPresentSpeed(presentSpeed);
+//        shipDailyReport.setAverageSpeed(averageSpeed);
+//        shipDailyReport.setCourse(course);
+//        shipDailyReport.setVesselOperationMode(vesselOperationMode);
+//        shipDailyReport.setEngineOperationMode(engineOperationMode);
+//        shipDailyReport.setGasOilConsumptionPerDay(gasOilConsumptionPerDay);
+//        shipDailyReport.setLubricantOilConsumptionPerDay(lubricantOilConsumptionPerDay);
+//        shipDailyReport.setGasOilRemainOnBoard(gasOilRemainOnBoard);
+//        shipDailyReport.setLubricantOilRemainOnBoard(lubricantOilRemainOnBoard);
+//        shipDailyReport.setRemarks(remarks);
+//        sdrRepository.save(shipDailyReport);
+//        return "sdr";
+//    }
 
 
 }

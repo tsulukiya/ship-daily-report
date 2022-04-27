@@ -23,6 +23,7 @@ public class ShipDailyReport {
     public ShipDailyReport() {
     }
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sdr_form_id")
